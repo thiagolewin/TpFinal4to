@@ -15,10 +15,15 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        List<Reseña> misReseñas = BD.ListarReseñas()
+        ViewBag.Cards = BD.MisCards("Select * from Card");
         return View();
     }
-
+    public IActionResult Pelicula(string pelicula)
+    {
+        ViewBag.Card = BD.MisCards("Select * from Card where IdCard = " + pelicula)[0];
+        ViewBag.Reseñas = BD.Reseñas("Select * from Reseña where IdPelicula = " + pelicula);
+        return View("Pelicula");
+    }
     public IActionResult Privacy()
     {
         return View();

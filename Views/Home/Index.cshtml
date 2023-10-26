@@ -5,4 +5,7 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @foreach(var item in @ViewBag.Cards) {
+        <a href='@Url.Action("Pelicula", "Home",new {pelicula=@item.IdCard})'>@item.Titulo</a>
+    }
 </div>

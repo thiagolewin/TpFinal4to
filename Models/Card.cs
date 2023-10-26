@@ -5,7 +5,6 @@ public class Card {
     public int Likes { set;  get;}
     public int DisLikes { set;  get;}
     public string Descripcion { set;  get;}
-    public List<Reseña> ListaReseñas { set; get; }
    
    // constructor
     public Card() {
@@ -15,15 +14,13 @@ public class Card {
         Likes = 0;
         DisLikes = 0;
         Descripcion = "";
-        ListaReseñas = new List<Reseña>();
     }
-    public Card(int idCard, string portada, string titulo, int likes, int disLikes, string descripcion, List<Reseña> listaReseñas ) {
+    public Card(int idCard, string portada, string titulo, int likes, int disLikes, string descripcion) {
         IdCard = idCard;
         Portada = portada;
         Titulo = titulo;
         Likes = likes;
         DisLikes = disLikes;
         Descripcion = descripcion;
-        ListaReseñas = listaReseñas;
     }
 }
