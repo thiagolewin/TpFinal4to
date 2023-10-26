@@ -15,7 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        
+        List<Reseña> misReseñas = BD.ListarReseñas()
         return View();
     }
 
