@@ -6,24 +6,42 @@
     <title>@ViewData["Title"] - TP_Final_4IC</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TP_Final_4IC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-    <div class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <div class="navbar-nav">
-        <a class="nav-item" href="#">Inicio</a>
-        <a class="nav-item" href="#">Productos</a>
-        <a class="nav-item" href="#">Contacto</a>
+    <nav class="navbar">
+      <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-      <div class="navbar-user">
-        <a class="nav-link" href="#">Usuario</a>
-        <input type="text" class="form-control" placeholder="Buscar">
+      <a href="#" class="logo">PelisFlix</a>
+      <div class="search">
+        <div class="container">
+          <input type="text" name="text" class="input" required="" placeholder="Type to search...">
+        </div>
       </div>
+      <div class="user">
+        <span>Usuario</span>
+        <a href="perfil.html">
+            <img
+          src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png"
+          alt="User Icon">
+        </a>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="close-button" id="close-button">X</div>
+      <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+      <a href="#"><i class="fas fa-film"></i> Películas</a>
+      <a href="#"><i class="fas fa-tv"></i> Series</a>
+      <a href="#"><i class="fas fa-newspaper"></i> Publicaciones</a>
+      <a href="perfil.html"><i class="fas fa-user"></i> Perfil</a>
+      <a href="#"><i class="fas fa-cog"></i> Configuración</a>
     </div>
-  </nav>
-    </header>
+    
+  </header>
 
     <div class="container">
         <main role="main" class="pb-3">

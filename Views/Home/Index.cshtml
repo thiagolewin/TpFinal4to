@@ -2,9 +2,39 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    @foreach(var item in @ViewBag.Cards) {
-        <a href='@Url.Action("Pelicula", "Home",new {pelicula=@item.IdCard})'>@item.Titulo</a>
-    }
-</div>
+    <link rel="stylesheet" href="./inicio.css">
+
+  <title>Inicio</title>
+    <h1>Explora el Mundo del Cine</h1>
+    <div class="content">
+      @foreach(var i in ViewBag.Cards){
+             <div class="card">
+          <div class="photo">
+            <img src= @i.Portada
+              alt="">
+          </div>
+          <div class="card-content">
+            <div class="title">@i.Titulo</div>
+            <div class="icons">
+              <div class="rating">
+                <i class="star">&#9733;</i>
+                <i class="star">&#9733;</i>
+                <i class="star">&#9733;</i>
+                <i class="star">&#9733;</i>
+                <i class="star">&#9733;</i>
+              </div>
+              <div class="review-button">
+                <a href="reseñas.html">
+                    <a class="btnReseñas" href='@Url.Action("Pelicula", "Home", new {pelicula =  @i.IdCard})'>Ver Reseña</a>
+                </a>
+              </div>
+              <div class="like-dislike">
+                <i class="fa fa-thumbs-up">1</i>
+                <i class="fa fa-thumbs-down">2</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+       
+    </div>
