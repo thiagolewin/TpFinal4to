@@ -1,0 +1,421 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;  
+  }
+  
+  header {
+    background-color: #1b1b1b;
+    color: #fff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    color: #fff;
+    margin-right: -40px;
+    margin-left: 60px;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+  }
+  
+  .menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+  }
+  
+  .search {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    border-radius: 30px;
+    padding: 7px;
+    width: 70%;
+  }
+  
+  .search .input {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 5px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .user img {
+    width: 62px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #1d1d1d;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 12%;
+    height: 100%;
+    padding: 10px;
+    transition: left 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .close-button {
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    align-self: flex-end;
+    margin-right: 10px;
+  }
+  
+  .mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    margin-left: 12px;
+  }
+  
+  main {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+.login{
+    margin-top: 150px;
+    width: 400px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    text-align: center;
+    animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 95%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ button a {
+    color: white;
+    text-decoration: none;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.alert-success {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    animation: fadeIn 1s ease, fadeOut 1s ease 3s forwards;
+}
+
+
+#login-form {
+    margin-top: 20px;
+}
+
+
+#registration-form {
+    margin-top: 20px;
+}
+
+
+#forgot-password-form {
+    margin-top: 20px;
+}
+
+
+.return-link {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.return-link:hover {
+    color: #0056b3;
+}
+
+.botonF{
+    margin-top: 8px;
+    margin-left: 115px;
+}
+
+.fondo{
+    background-color: #111;
+}
+footer {
+    background-color: #1b1b1b;
+    color: #fff;
+    padding: 40px 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-logo h2 {
+    font-size: 36px;
+    margin-left: 10px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .footer-links ul li {
+    margin: 10px;
+  }
+  
+  .footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #ffcc00;
+  }
+  
+  .footer-social a {
+    font-size: 24px;
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-social a:hover {
+    color: #ffcc00;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .footer-bottom a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-bottom a:hover {
+    color: #fff;
+  }
+  
+  /* Alineación de elementos en el footer */
+  footer .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Ajuste de tamaño del logo */
+  .footer-logo h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  /* Estilo de los enlaces del footer */
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los enlaces se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centra los enlaces horizontalmente */
+  }
+  
+  .footer-links ul li {
+    margin: 10px;
+  }
+  
+  .footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #ffcc00;
+  }
+  
+  footer {
+    max-width: 100%; /* Se expandirá hasta el ancho máximo de la ventana */
+    box-sizing: border-box; /* Evita que el borde o margen sumen al ancho máximo */
+  }
+  
+  /* Alineación de elementos en el footer-bottom */
+  .footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .footer-bottom a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-bottom a:hover {
+    color: #fff;
+  }
+  
+  /* Ajuste de espaciado en el footer */
+  footer .footer-social {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-social a {
+    font-size: 24px;
+    margin: 0 15px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .navbar {
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .logo {
+      margin: 20px 0;
+    }
+  }

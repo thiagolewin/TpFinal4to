@@ -16,20 +16,20 @@
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
-      <a href="#" class="logo">PelisFlix</a>
+      <a href='@Url.Action("Index", "Home")' class="logo">PelisFlix</a>
       <div class="search">
         <div class="container">
           <input type="text" name="text" class="input" required="" placeholder="Type to search...">
         </div>
       </div>
-      <div class="user">
+      <a class="user" href='@Url.Action("Perfil", "Home")'>
         <span>Usuario</span>
-        <a href="perfil.html">
+        <div href="perfil.html">
             <img
           src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png"
           alt="User Icon">
-        </a>
-      </div>
+        </div>
+      </a>
     </nav>
     <div class="mobile-menu" id="mobile-menu">
       <div class="close-button" id="close-button">X</div>

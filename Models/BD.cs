@@ -22,5 +22,10 @@ public static class BD {
         }
         return misReseñas;
     }
-
+     public static void AgregarReseña(Reseña reseña) {
+        string sql = "INSERT INTO Reseña(IdUsuario,IdPelicula,ReseñaTxt,NombreUsuario,NombrePelicula) VALUES (@pIdUsuario,@pIdPelicula,@pReseñaTxt,@pNombreUsuario,@pNombrePelicula)";
+        using(SqlConnection db = new SqlConnection(_connectionString)) {
+            db.Execute(sql, new {pIdUsuario = reseña.IdUsuario, pIdPelicula = reseña.IdPelicula, pReseñaTxt = reseña.ReseñaTxt, pNombreUsuario = reseña.NombreUsuario, pNombrePelicula = reseña.NombrePelicula});
+        }
+    }
 }

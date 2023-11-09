@@ -3,18 +3,22 @@ public class Reseña {
     public int IdUsuario { set;  get;}
     public int IdPelicula { set;  get;}
     public string ReseñaTxt { set;  get;}
+    public string NombreUsuario { set;  get;}
+    public string NombrePelicula { set;  get;}
    
    // constructor
     public Reseña() {
-        IdReseña = 0;
         IdUsuario = 0;
         IdPelicula = 0;
         ReseñaTxt = "";
+        NombreUsuario = "";
+        NombrePelicula = "";
     }
-    public Reseña(int idReseña, int idUsuario, int idPelicula, string reseñaTxt) {
-        IdReseña = idReseña;
+    public Reseña(int idUsuario, int idPelicula, string reseñaTxt, string nombreUsuario,string nombrePelicula) {
         IdUsuario = idUsuario;
         IdPelicula = idPelicula;
         ReseñaTxt = reseñaTxt;
+        NombreUsuario = nombreUsuario;
+        NombrePelicula = nombrePelicula;
     }
 }
