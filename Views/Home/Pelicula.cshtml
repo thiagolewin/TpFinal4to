@@ -41,11 +41,11 @@
             <div class="titlo">
                 <h1>RESEÑAS</h1>
             </div>
-            <form method="post" action='@Url.Action("EnviarReseña","Home")' id="formReseñas">
+            <form method="post" action='@Url.Action("EnviarReseña","Home")' id="formReseñas" style="display: flex; flexDirection: column;">
               <input type="text" placeholder="Buscar reseñas" name="texto">
               <input type="hidden" name="idUsuario" value=@ViewBag.Usuario.IdUsuario>
               <input type="hidden" name="idPelicula" value=@ViewBag.Card.IdCard>
-              <input type="hidden" name="nombreUsuario" value=@ViewBag.Usuario.Nombre>
+              <input type="hidden" name="nombreUsuario" value=@ViewBag.Usuario.UserName>
               <input type="hidden" name="nombrePelicula" value=@ViewBag.Card.Titulo>
               <button type="submit">Enviar</button>
             </form>

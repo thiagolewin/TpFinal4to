@@ -22,10 +22,21 @@ public static class BD {
         }
         return misReseñas;
     }
-     public static void AgregarReseña(Reseña reseña) {
+     public static void AgregarReseña(int idUsuario,int idPelicula,string texto,string nombreUsuario,string nombrePelicula) {
         string sql = "INSERT INTO Reseña(IdUsuario,IdPelicula,ReseñaTxt,NombreUsuario,NombrePelicula) VALUES (@pIdUsuario,@pIdPelicula,@pReseñaTxt,@pNombreUsuario,@pNombrePelicula)";
         using(SqlConnection db = new SqlConnection(_connectionString)) {
-            db.Execute(sql, new {pIdUsuario = reseña.IdUsuario, pIdPelicula = reseña.IdPelicula, pReseñaTxt = reseña.ReseñaTxt, pNombreUsuario = reseña.NombreUsuario, pNombrePelicula = reseña.NombrePelicula});
+            db.Execute(sql, new {pIdUsuario = idUsuario, pIdPelicula = idPelicula, pReseñaTxt = texto, pNombreUsuario = nombreUsuario, pNombrePelicula = nombrePelicula});
         }
     }
+       public static User Login(string username, string contrasena) {
+        User MiUser = new User();
+        
+        using(SqlConnection db = new SqlConnection(_connectionString)) {
+                string sql = "SELECT * FROM Usuario WHERE UserName = @pUserName AND Contrasena = @pContrasena";
+                MiUser = db.QueryFirstOrDefault<User>(sql, new {pUserName = username, pContrasena = contrasena});
+            
+        }
+        return MiUser;
+    }
+   
 }

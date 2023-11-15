@@ -1,26 +1,29 @@
 public class User {
     public int IdUsuario {set; get;}
+    public string UserName {set; get;}
     public string Nombre {set; get;}
     public string Apellido { set;  get;}
-    public string Contraseña { set;  get;}
+    public string Contrasena { set;  get;}
     public string PaisOrigen { set;  get;}
-    public int PeliculaFav { set;  get;}
+    public string PeliculaFavorita { set;  get;}
    
    // constructor
     public User() {
         IdUsuario = 0;
+        UserName = "";
         Nombre = "";
         Apellido = "";
-        Contraseña = "";
+        Contrasena = "";
         PaisOrigen = "";
-        PeliculaFav = 0;
+        PeliculaFavorita = "";
     }
-    public User(int idUsuario, string nombre, string apellido, string contraseña, string paisOrigen, int peliculaFav) {
+    public User(int idUsuario, string userName, string nombre, string apellido, string Contrasena, string paisOrigen, string peliculaFav) {
         IdUsuario = idUsuario;
+        UserName = userName;
         Nombre = nombre;
         Apellido = apellido;
-        Contraseña = contraseña;
+        Contrasena = Contrasena;
         PaisOrigen = paisOrigen;
-        PeliculaFav = peliculaFav;
+        PeliculaFavorita = peliculaFav;
     }
 }

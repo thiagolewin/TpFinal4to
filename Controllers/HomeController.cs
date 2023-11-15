@@ -34,13 +34,34 @@ public class HomeController : Controller
         return View("Perfil");
     }
     public IActionResult EnviarReseña(int idUsuario,int idPelicula,string texto,string nombreUsuario,string nombrePelicula) {
-        Reseña NuevaReseña = new Reseña(idUsuario,idPelicula,texto,nombreUsuario,nombrePelicula);
-        BD.AgregarReseña(NuevaReseña);
-        ViewBag.Card = BD.MisCards("Select * from Card where IdCard = " + idPelicula)[0];
-        int total_likes = ViewBag.Card.Likes + ViewBag.Card.DisLikes;
-        ViewBag.Estrellas = (ViewBag.Card.Likes/total_likes) * 5;
-        ViewBag.Reseñas = BD.Reseñas("Select * from Reseña where IdPelicula = " + idPelicula);
-        return View("Pelicula");
+        BD.AgregarReseña(idUsuario,idPelicula,texto,nombreUsuario,nombrePelicula);
+        return RedirectToAction("Pelicula", new { pelicula = idPelicula });
+    }
+    public IActionResult Login(string usuario, string Contrasena) {
+    
+        User userActivo = BD.Login(usuario, Contrasena);
+       
+        //if(userActivo != null || userActivo.PeliculaFav == null ) {
+        if (userActivo != null){
+            UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita);
+            ViewBag.Cards = BD.MisCards("Select * from Card");
+            return View("Index");
+        } else {
+            return View("Login");
+        }
+
+
+    }
+      public IActionResult Register(string username, string Contrasena) {
+        User userActivo = BD.Login(username, Contrasena);
+        if(userActivo != null || userActivo.PeliculaFavorita == null ) {
+           return View("Index");
+        } else {
+            
+            UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita);
+        }
+
+        return View("Index");
     }
     public IActionResult Privacy()
     {
