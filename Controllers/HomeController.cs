@@ -18,6 +18,7 @@ public class HomeController : Controller
         if(UsuarioActivo.DevolverUser().IdUsuario == 0) {
             return View("login");
         }
+        ViewBag.Usuario = UsuarioActivo.DevolverUser();
         ViewBag.Cards = BD.MisCards("Select * from Card");
         return View();
     }
@@ -25,12 +26,31 @@ public class HomeController : Controller
     {
         ViewBag.Card = BD.MisCards("Select * from Card where IdCard = " + pelicula)[0];
         ViewBag.Usuario = UsuarioActivo.DevolverUser();
-        int total_likes = ViewBag.Card.Likes + ViewBag.Card.DisLikes;
-        ViewBag.Estrellas = (ViewBag.Card.Likes/total_likes) * 5;
+        int totalLikes = ViewBag.Card.Likes + ViewBag.Card.DisLikes;
+        double puntuacion = ((double)ViewBag.Card.Likes / totalLikes) * 5;
+        ViewBag.Estrellas = (int)Math.Round(puntuacion);
+
+
         ViewBag.Reseñas = BD.Reseñas("Select * from Reseña where IdPelicula = " + pelicula);
         return View("Pelicula");
     }
+    public IActionResult DisLikeReseña() {
+
+        return View();
+    }
     public IActionResult Perfil() {
+        ViewBag.Usuario = UsuarioActivo.DevolverUser();
+        ViewBag.Reseñas = BD.Reseñas("Select * from Reseña where IdUsuario = " + ViewBag.Usuario.IdUsuario);
+        int totalLikes = 0;
+        int totalDislikes = 0;
+        foreach(var i in ViewBag.Reseñas) {
+            totalLikes+= i.Likes; 
+            totalDislikes+= i.DisLikes; 
+        }
+        int total = totalLikes +totalDislikes;
+        double puntuacion = ((double)totalLikes / total) * 5;
+        ViewBag.Puntuacion = (int)Math.Round(puntuacion);
+        ViewBag.TotalLikes = totalLikes;
         return View("Perfil");
     }
     public IActionResult EnviarReseña(int idUsuario,int idPelicula,string texto,string nombreUsuario,string nombrePelicula) {
@@ -43,7 +63,8 @@ public class HomeController : Controller
        
         //if(userActivo != null || userActivo.PeliculaFav == null ) {
         if (userActivo != null){
-            UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita);
+            UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita,userActivo.Idioma);
+            ViewBag.Usuario = UsuarioActivo.DevolverUser();
             ViewBag.Cards = BD.MisCards("Select * from Card");
             return View("Index");
         } else {
@@ -58,7 +79,7 @@ public class HomeController : Controller
            return View("Index");
         } else {
             
-            UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita);
+            UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita,userActivo.Idioma);
         }
 
         return View("Index");

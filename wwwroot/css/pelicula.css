@@ -125,21 +125,23 @@ header {
 }
 
 .photo{
-    margin-top: 200px;
+    margin-top: 150px;
     flex: 1 1 400px;
     text-align: center;
 }
 
 
 .photo img{
-    width: 325px;
+    width: 425px;
     height: 425px;
     border-radius: 5px;
 }
 
 .texto{
-    margin-top: 200px;
+    margin-top: 150px;
     flex: 1 1 400px;
+    color: red;
+    
 }
 
 .title{
@@ -192,7 +194,7 @@ header {
   }
 
 .resena{
-    margin-top: 200px;
+    margin-top: 0;
     text-align: center;
 }
 
@@ -245,7 +247,7 @@ header {
 }
 
 .card {
-    width: 45%;
+    width: 30%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     margin: 10px;
@@ -264,7 +266,22 @@ header {
   .card:hover {
     transform: scale(1.05); 
   }
-  
+  .LikesDislikes {
+    display: flex;
+    justify-content: center;
+  }
+  .LikesDislikes .dislike-icon,   .LikesDislikes .like-icon{
+    margin: 0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .LikesDislikes .like-icon {
+    margin-left: 5px;
+  }
+  .LikesDislikes .dislike-icon {
+      margin-right: 5px;
+  }
   h3{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }

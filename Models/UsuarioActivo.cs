@@ -6,7 +6,8 @@ public class UsuarioActivo {
     public static string Contrasena {get; private set;} = "";
     public static string PaisOrigen {get; private set;} = "";
     public static string PeliculaFavorita {get; private set;} = "";
-    public static void AgregarUser(int idUsuario, string userName, string nombre, string apellido, string Contrasena, string paisOrigen, string peliculaFav) {
+    public static string Idioma {get; private set;} = "";
+    public static void AgregarUser(int idUsuario, string userName, string nombre, string apellido, string Contrasena, string paisOrigen, string peliculaFav, string idioma) {
         IdUsuario = idUsuario;
         UserName = userName;
         Nombre = nombre;
@@ -14,9 +15,10 @@ public class UsuarioActivo {
         Contrasena = Contrasena;
         PaisOrigen = paisOrigen;
         PeliculaFavorita = peliculaFav;
+        Idioma = idioma;
     }
     public static User DevolverUser() {
-        User UsuarioActivo = new User(IdUsuario,UserName,Nombre,Apellido,Contrasena,PaisOrigen,PeliculaFavorita);
+        User UsuarioActivo = new User(IdUsuario,UserName,Nombre,Apellido,Contrasena,PaisOrigen,PeliculaFavorita,Idioma);
         return UsuarioActivo;
     }
 }

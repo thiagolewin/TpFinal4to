@@ -13,7 +13,6 @@ public static class BD {
         }
         return misCards;
     }
-    
     public static List<Reseña> Reseñas(string condition) {
         List<Reseña> misReseñas = new List<Reseña>();
         using(SqlConnection db = new SqlConnection(_connectionString)) {
@@ -23,7 +22,7 @@ public static class BD {
         return misReseñas;
     }
      public static void AgregarReseña(int idUsuario,int idPelicula,string texto,string nombreUsuario,string nombrePelicula) {
-        string sql = "INSERT INTO Reseña(IdUsuario,IdPelicula,ReseñaTxt,NombreUsuario,NombrePelicula) VALUES (@pIdUsuario,@pIdPelicula,@pReseñaTxt,@pNombreUsuario,@pNombrePelicula)";
+        string sql = "INSERT INTO Reseña(IdUsuario,IdPelicula,ReseñaTxt,NombreUsuario,NombrePelicula,Likes,DisLikes) VALUES (@pIdUsuario,@pIdPelicula,@pReseñaTxt,@pNombreUsuario,@pNombrePelicula,0,0)";
         using(SqlConnection db = new SqlConnection(_connectionString)) {
             db.Execute(sql, new {pIdUsuario = idUsuario, pIdPelicula = idPelicula, pReseñaTxt = texto, pNombreUsuario = nombreUsuario, pNombrePelicula = nombrePelicula});
         }

@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "Perfil";
+    ViewBag.MostrarNavbar = true;
+}
+    <link rel="stylesheet" href="~/css/perfil.css" asp-append-version="true" />
+    
+    <div class="usuario">
+        <img src="https://static.vecteezy.com/system/resources/previews/019/879/198/original/user-icon-on-transparent-background-free-png.png" alt="">
+        <h1>@ViewBag.Usuario.Nombre  @ViewBag.Usuario.Apellido</h1>
+    </div>
+    <div class="info">
+        <div class="reseñas">
+            <h1>RESEÑAS</h1>
+            @foreach(var i in ViewBag.Reseñas) {
+            <div class="pelicula">
+                <h1>@i.NombrePelicula</h1>
+                <h2>@i.ReseñaTxt</h2>
+            </div>
+            }
+        </div>
+        <div class="reputacion">
+            <h1>REPUTACION</h1>
+            <h2>@ViewBag.Puntuacion⭐</h2>
+        </div>
+        <div class="datos">
+            <h1>DATOS</h1>
+         <div class="personal">   
+            <h1>Pais de origen</h1>
+            <h2>@ViewBag.Usuario.PaisOrigen</h2>
+        </div>
+        <div class="personal">
+            <h1>IDIOMA</h1>
+            <h2>@ViewBag.Usuario.Idioma</h2>
+        </div> 
+        <div class="personal">
+            <h1>PELICULA FAVORITA</h1>
+            <h2>@ViewBag.Usuario.PeliculaFavorita</h2>
+        </div> 
+        <div class="personal">
+            <h1>Cantidad de likes </h1>
+            <h2>@ViewBag.TotalLikes</h2>
+        </div>
+        </div>
+    </div>

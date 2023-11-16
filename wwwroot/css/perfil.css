@@ -1,0 +1,457 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;  
+  }
+  
+  header {
+    background-color: #1b1b1b;
+    color: #fff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    color: #fff;
+    margin-right: -40px;
+    margin-left: 60px;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+  }
+  
+  .menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+  }
+  
+  .search {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    border-radius: 30px;
+    padding: 7px;
+    width: 70%;
+  }
+  
+  .search .input {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 5px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .user img {
+    width: 62px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #1d1d1d;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 12%;
+    height: 100%;
+    padding: 10px;
+    transition: left 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .close-button {
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    align-self: flex-end;
+    margin-right: 10px;
+  }
+  
+  .mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    margin-left: 12px;
+  }
+  
+ 
+.usuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+    }
+    .usuario h1{
+       font-size: 40px;
+    }
+    .usuario img{
+        height: 30%;
+        width: 20%;
+    }
+    /* Estilos para el contenedor principal */
+    .info {
+        display: flex;
+        justify-content: space-around;
+        background-color: #f7f7f7;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        margin-top: 100px;
+    }
+    
+    /* Estilos para la sección de reseñas */
+    .reseñas {
+        flex: 1;
+        margin-right: 15px;
+        text-align: center;
+    }
+    
+    .pelicula {
+        margin-bottom: 20px;
+    }
+    
+    .pelicula h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+    
+    .pelicula h2 {
+        font-size: 16px;
+        color: #555;
+        margin-left: 10px;
+        
+    }
+    
+    /* Estilos para la sección de reputación */
+    .reputacion {
+    
+        text-align:center;
+    }
+    
+    .reputacion h1 {
+        font-size: 24px;
+      
+    }
+    
+    .reputacion h2 {
+        font-size: 32px;
+        margin: 0;
+        color: #ff9900;
+        text-align: center;
+    }
+    
+    /* Estilos para la sección de datos personales */
+    .datos {
+        flex: 1;
+        text-align: center;
+    }
+    
+    .personal {
+        margin-bottom: 10px;
+    }
+    
+    .personal h1 {
+        font-size: 18px;
+        margin: 0;
+    }
+    
+    .personal h2 {
+        font-size: 16px;
+        color: #333;
+        margin: 0;
+    }
+    
+    /* Estilos generales */
+    h1 {
+        font-weight: bold;
+    }
+    
+    h2 {
+        font-weight: normal;
+    }
+    footer {
+        background-color: #1b1b1b;
+        color: #fff;
+        padding: 40px 0;
+        margin-top: 60px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      .footer-logo h2 {
+        font-size: 36px;
+        margin-left: 10px;
+      }
+      
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+      }
+      
+      .footer-links ul li {
+        margin: 10px;
+      }
+      
+      .footer-links ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s;
+      }
+      
+      .footer-links ul li a:hover {
+        color: #ffcc00;
+      }
+      
+      .footer-social a {
+        font-size: 24px;
+        margin: 0 15px;
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      
+      .footer-social a:hover {
+        color: #ffcc00;
+      }
+      
+      .footer-bottom {
+        text-align: center;
+        padding: 15px 0;
+      }
+      
+      .footer-bottom p {
+        margin: 0;
+        font-size: 14px;
+        color: #fff;
+      }
+      
+      .footer-bottom a {
+        color: #ffcc00;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      
+      .footer-bottom a:hover {
+        color: #fff;
+      }
+      
+      /* Alineación de elementos en el footer */
+      footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      /* Ajuste de tamaño del logo */
+      .footer-logo h2 {
+        font-size: 24px;
+        margin: 0;
+      }
+      
+      /* Estilo de los enlaces del footer */
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap; /* Permite que los enlaces se envuelvan en pantallas pequeñas */
+        justify-content: center; /* Centra los enlaces horizontalmente */
+      }
+      
+      .footer-links ul li {
+        margin: 10px;
+      }
+      
+      .footer-links ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+      
+      .footer-links ul li a:hover {
+        color: #ffcc00;
+      }
+      
+      footer {
+        max-width: 100%; /* Se expandirá hasta el ancho máximo de la ventana */
+        box-sizing: border-box; /* Evita que el borde o margen sumen al ancho máximo */
+      }
+      
+      /* Alineación de elementos en el footer-bottom */
+      .footer-bottom {
+        text-align: center;
+        padding: 15px 0;
+      }
+      
+      .footer-bottom p {
+        margin: 0;
+        font-size: 14px;
+      }
+      
+      .footer-bottom a {
+        color: #ffcc00;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      
+      .footer-bottom a:hover {
+        color: #fff;
+      }
+      
+      /* Ajuste de espaciado en el footer */
+      footer .footer-social {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .footer-social a {
+        font-size: 24px;
+        margin: 0 15px;
+      }
+    
+    
+    /* Estilos para dispositivos pequeños (responsive) */
+    @media screen and (max-width: 700px) {
+        .navbar {
+            flex-direction: row;
+            align-items: center;
+          }
+          
+          .logo {
+            margin: 20px 0;
+          }
+    }
+    
+    @media screen and (max-width: 768px) {
+        .mobile-menu {
+          display: flex;
+        }
+        .content {
+            flex-direction: column;
+        }
+        .photo-container,
+            .texto {
+                align-items: center;
+                flex: 1 1 100%;
+            }
+        .descripcion{
+            font-size: 14px;
+        }
+        .cards {
+            display: flex;
+        }
+        .card {
+            flex: 1 1 200%;
+        }
+      }
+    
+      @media screen and (max-width: 1300px){
+        .mobile-menu {
+            display: flex;
+          }
+          .content {
+              flex-direction: column;
+          }
+          .photo-container,
+              .title {
+                  text-align: center;
+              }
+          .descripcion{
+            width: auto;
+              margin-left: 35px;
+              font-size: 14px;
+              text-align: center;
+          }
+          .cards {
+              flex-direction: row;
+              flex-wrap: wrap;
+          }
+          .card {
+              flex: 1 1 100%;
+          }
+        .descripcion{
+            font-size: 14px;
+        }
+      }
+    
+      @media screen and (max-width: 2055px){
+        .descripcion{
+            font-size: 18px;
+        }
+      }
+    
+      @media screen and (max-width: 1955px){
+        .descripcion{
+            font-size: 17px;
+        }
+      }
+    
+      @media screen and (max-width: 1785px){
+        .descripcion{
+            font-size: 16px;
+        }
+      }
+    
+      @media screen and (max-width: 1590px){
+        .descripcion{
+            font-size: 15px;
+        }
+      }
+    
+      @media screen and (max-width: 1308px){
+        .descripcion{
+            font-size: 14.5px;
+        }
+      }

@@ -87,7 +87,25 @@ body {
     margin-right: 20px;
     cursor: pointer;
   }
+  .LikesDislikes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 47px;
+  }
+  .LikesDislikes .dislike-icon,   .LikesDislikes .like-icon{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .LikesDislikes .like-icon {
+    margin-left: 5px;
   
+  }
+  .LikesDislikes .dislike-icon {
+      margin-right: 5px;
+      margin-left: 10px;
+  }
   .mobile-menu {
     display: flex;
     flex-direction: column;
@@ -190,26 +208,46 @@ body {
   
   .review-button {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15  px;
   }
   
-  .like-dislike {
+  .LikesDislikes {
     display: flex;
+    margin-top: 10px  ;
+    justify-content: center;
   }
-  
-  .like-dislike i {
+  .LikesDislikes .dislike-icon,   .LikesDislikes .like-icon{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .LikesDislikes .like-icon {
+    margin-left: 5px;
+  }
+  .LikesDislikes .dislike-icon {
+      margin-right: 5px;
+      margin-left: 10px;
+  }
+  .like-icon {
+    display: inline-block;
     color: #333;
-    font-size: 20px;
-    margin: 0 5px;
-    cursor: pointer;
-    margin-top: 7px;
-  } 
-  
-  .fa-thumbs-up, .fa-thumbs-down{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: color 0.3s;
+    margin-right: 70px;
   }
-  .fa-thumbs-up:hover {
+  
+  .like-icon:hover {
     color: blue;
+  }
+
+  .dislike-icon {
+    display: inline-block;
+    color: #333;
+    transition: color 0.3s;
+    margin-right: 10px;
+  }
+  
+  .dislike-icon:hover{
+    color: red;
   }
   .btnReseñas {
     background-color: #1b1b1b;
@@ -219,9 +257,7 @@ body {
     margin: 0 20px;
     border-radius: 10px;
   }
-  .fa-thumbs-down:hover {
-    color: red;
-  }
+
   
   @media screen and (max-width: 768px) {
     .mobile-menu {

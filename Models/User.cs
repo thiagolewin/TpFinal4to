@@ -6,6 +6,7 @@ public class User {
     public string Contrasena { set;  get;}
     public string PaisOrigen { set;  get;}
     public string PeliculaFavorita { set;  get;}
+    public string Idioma { set;  get;}
    
    // constructor
     public User() {
@@ -16,8 +17,9 @@ public class User {
         Contrasena = "";
         PaisOrigen = "";
         PeliculaFavorita = "";
+        Idioma = "";
     }
-    public User(int idUsuario, string userName, string nombre, string apellido, string Contrasena, string paisOrigen, string peliculaFav) {
+    public User(int idUsuario, string userName, string nombre, string apellido, string Contrasena, string paisOrigen, string peliculaFav, string idioma) {
         IdUsuario = idUsuario;
         UserName = userName;
         Nombre = nombre;
@@ -25,5 +27,6 @@ public class User {
         Contrasena = Contrasena;
         PaisOrigen = paisOrigen;
         PeliculaFavorita = peliculaFav;
+        Idioma = idioma;
     }
 }
