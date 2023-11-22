@@ -201,10 +201,12 @@ body {
   
   .icons {
     display: flex;
-    align-items: center; 
+    align-items: center;
     margin-top: -2px; 
   }
-  
+  .icons .stars{
+      margin-left: 20px;
+  }
   .review-button {
     text-align: center;
     margin-top: 15  px;

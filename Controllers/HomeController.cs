@@ -22,14 +22,10 @@ public class HomeController : Controller
         ViewBag.Cards = BD.MisCards("Select * from Card");
         return View();
     }
-    public IActionResult IndexS(string letra)
-     {
-        if(UsuarioActivo.DevolverUser().IdUsuario == 0) {
-            return View("Login");
-        }
-        ViewBag.Usuario = UsuarioActivo.DevolverUser();
+    public IActionResult Filtrado() {
+                ViewBag.Usuario = UsuarioActivo.DevolverUser();
         ViewBag.Cards = BD.MisCards("Select * from Card");
-        return View("Index");
+        return View("Filtrado");
     }
     public IActionResult ViewRegister() {
         return View("Registro");

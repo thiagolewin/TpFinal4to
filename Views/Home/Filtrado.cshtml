@@ -1,13 +1,30 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Filtrado";
     ViewBag.MostrarNavbar = true;
 }
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
-
-<title>Inicio</title>
-<h1>Explora el Mundo del Cine</h1>
-<div class="content">
+<link rel="stylesheet" href="~/css/filtrado.css" asp-append-version="true" />
+<div class="filter-box-advanced active">
+        <h2>Filtrar</h2>
+        <div class="filter-buttons">
+          <button class="filter-button" id="show-all">Mostrar Todos</button>
+          <div class="filter-accordion">
+            <input type="checkbox" id="star-filter">
+            <label for="star-filter" class="filter-button">Por Estrellas <i class="fas fa-chevron-down"></i></label>
+            <div class="filter-content">
+                <a class="filter-button">1 Estrella</a>
+                <button class= "filter-button">2 Estrellas</button>
+                <button class="filter-button">3 Estrellas</button>
+                <button class="filter-button">4 Estrellas</button>
+                <button class="filter-button">5 Estrellas</button>
+            </div>
+          </div>
+          <button class="filter-button" id="filter-oldest">Más Dislikes</button>
+          <button class="filter-button" id="filter-likes">Más Likes</button>
+        </div>
+      </div>
+    <h1>Favoritas</h1>
+    <div class="content">
     @foreach(var i in @ViewBag.Cards){
         <div class="card">
             <div class="photo">
@@ -34,7 +51,6 @@
     }
     
 </div>
-
 @functions {
     // Método para calcular la puntuación de estrellas
     double CalculateStars(int likes, int dislikes)

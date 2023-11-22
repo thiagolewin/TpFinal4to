@@ -27,3 +27,43 @@
         });
     });
 });
+
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeButton = document.getElementById('close-button');
+
+
+menuToggle.addEventListener('click', () => {
+    mobileMenu.style.left = "0";
+});
+
+
+closeButton.addEventListener('click', () => {
+    mobileMenu.style.left = "-100%";
+});
+
+
+document.addEventListener('click', (event) => {
+    if (event.target !== menuToggle && event.target !== mobileMenu && event.target !== closeButton) {
+        mobileMenu.style.left = "-100%";
+    }
+});
+
+
+const stars = document.querySelectorAll('.star');
+
+
+stars.forEach(star => {
+    star.addEventListener('mouseover', () => {
+        star.classList.add('active');
+    });
+   
+    star.addEventListener('mouseout', () => {
+        star.classList.remove('active');
+    });
+});
+
+
+
+
+
