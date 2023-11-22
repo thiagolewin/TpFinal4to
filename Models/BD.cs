@@ -37,5 +37,39 @@ public static class BD {
         }
         return MiUser;
     }
+    public static void ActualizarInfo(string username, string campo, string data) {
+        using(SqlConnection db = new SqlConnection(_connectionString)) {
+        switch (campo) {
+            case "PaisOrigen":
+                string sql = "UPDATE Usuario SET PaisOrigen = @pData WHERE UserName = @pUserName";
+                db.Execute(sql, new {@pCampo = campo, @pData = data, pUserName = username});
+                break;
+            case "Idioma":
+                 sql = "UPDATE Usuario SET Idioma = @pData WHERE UserName = @pUserName";
+                db.Execute(sql, new {@pCampo = campo, @pData = data, pUserName = username});
+                break;
+            case "PeliculaFavorita":
+                 sql = "UPDATE Usuario SET PeliculaFavorita = @pData WHERE UserName = @pUserName";
+                db.Execute(sql, new {@pCampo = campo, @pData = data, pUserName = username});
+                break;
+        }
+    }
+    }
+     public static User ExisteUser(string username) {
+        User MiUser = new User();
+        
+        using(SqlConnection db = new SqlConnection(_connectionString)) {
+                string sql = "SELECT * FROM Usuario WHERE UserName = @pUserName";
+                MiUser = db.QueryFirstOrDefault<User>(sql, new {pUserName = username});
+            
+        }
+        return MiUser;
+    }
+     public static void AgregarUser(string Nombre, string Apellido, string UserName, string Contraseña, string Mail, string Telefono) {
+        string sql = "INSERT INTO Usuario(Nombre,Apellido,Contrasena,PaisOrigen,PeliculaFavorita,UserName,Idioma) VALUES (@pNombre,@pApellido,@pContrasena,'','',@pUserName,'')";
+        using(SqlConnection db = new SqlConnection(_connectionString)) {
+            db.Execute(sql, new {pNombre = Nombre, pApellido = Apellido, pContrasena = Contraseña,pUserName = UserName});
+        }
+    }
    
 }

@@ -3,10 +3,11 @@
     ViewBag.MostrarNavbar = true;
 }
     <link rel="stylesheet" href="~/css/perfil.css" asp-append-version="true" />
-    
+    <span style="display:none;" id="username" class="user">@ViewBag.Usuario.UserName</span>
     <div class="usuario">
         <img src="https://static.vecteezy.com/system/resources/previews/019/879/198/original/user-icon-on-transparent-background-free-png.png" alt="">
         <h1>@ViewBag.Usuario.Nombre  @ViewBag.Usuario.Apellido</h1>
+        <a class="buttonR" href='@Url.Action("Cerrar", "Home")'>CERRAR SESIÓN</a>
     </div>
     <div class="info">
         <div class="reseñas">
@@ -18,27 +19,34 @@
             </div>
             }
         </div>
-        <div class="reputacion">
-            <h1>REPUTACION</h1>
-            <h2>@ViewBag.Puntuacion⭐</h2>
-        </div>
         <div class="datos">
             <h1>DATOS</h1>
          <div class="personal">   
+            <div class="datosPart">
+            <span style="display:none" class="dato">PaisOrigen</span>
             <h1>Pais de origen</h1>
-            <h2>@ViewBag.Usuario.PaisOrigen</h2>
+                <div id="contenedorperso">
+                    <h2 id="datoPerso">@ViewBag.Usuario.PaisOrigen</h2>
+                </div>
+            </div>
+            <button class="button">EDITAR</button>
         </div>
-        <div class="personal">
+       <div class="personal">   
+            <div class="datosPart">
+            <span style="display:none" class="dato">Idioma</span>
             <h1>IDIOMA</h1>
-            <h2>@ViewBag.Usuario.Idioma</h2>
-        </div> 
-        <div class="personal">
+            <h2 id="datoPerso">@ViewBag.Usuario.Idioma</h2>
+            </div>
+            <button class="button">EDITAR</button>
+        </div>
+       <div class="personal">   
+            <div class="datosPart">
+            <span style="display:none" class="dato">PeliculaFavorita</span>
             <h1>PELICULA FAVORITA</h1>
-            <h2>@ViewBag.Usuario.PeliculaFavorita</h2>
-        </div> 
-        <div class="personal">
-            <h1>Cantidad de likes </h1>
-            <h2>@ViewBag.TotalLikes</h2>
+            <h2 id="datoPerso">@ViewBag.Usuario.PeliculaFavorita</h2>
+            </div>
+            <button class="button">EDITAR</button>
         </div>
         </div>
     </div>
+    <script src="/js/perfil.js"></script>

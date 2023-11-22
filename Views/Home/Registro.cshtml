@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Registro";
+    ViewBag.MostrarNavbar = false;
+}
+<link rel="stylesheet" href="~/css/registro.css" asp-append-version="true" />
+ <div class="">
+        <h1>Registro de Usuario</h1>
+        <form id="registration-form" action='@Url.Action("Register","Home")'>
+            <label for="Nombre">Nombre</label>
+            <input type="text" id="Nombre" name="Nombre" placeholder="Introduce tu Nombre" required>
+            <label for="Apellido">Apellido</label>
+            <input type="text" id="Apellido" name="Apellido" placeholder="Introduce tu Apellido" required>
+            <label for="UserName">Usuario</label>
+            <input type="text" id="UserName" name="UserName" placeholder="Introduce tu nombre" required>
+            <label for="Contraseña">Contraseña</label>
+            <div class="password-input">
+                <input type="password" id="Contraseña" name="Contraseña" placeholder="Introduce tu contraseña" required>
+                <i class="fas fa-eye" id="toggle-password"></i>
+            </div>
+            <p class="mensajepassword" style="color: red; fontWeight=1000"></p>
+            <label for="confirm-password">Confirmar Contraseña</label>
+            <input type="password" id="Confirmacion-Contraseña" name="Contraseña" placeholder="Introduce tu contraseña"
+                required>
+              <p class="mensajepasswordrepetida" style="color: red; fontWeight=1000"></p>
+            <label for="Mail">Teléfono</label>
+            <input type="text" id="Telefono" name="Telefono" placeholder="Introduce tu teléfono" required>
+             <p class="mensaje">@ViewBag.Incorrecto</p>
+            <button type="submit">Registrarse</button>
+        </form>
+        <p><a href='@Url.Action("Login", "Home")'>Ya tienes una cuenta? Inicia Sesión</a></p>
+    </div>
+    <script src="/js/password.js"></script>

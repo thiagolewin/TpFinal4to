@@ -12,15 +12,11 @@
     <header>
     @if (ViewBag.MostrarNavbar == null || ViewBag.MostrarNavbar){
     <nav class="navbar">
-      <div class="menu-toggle" id="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+    
       <a href='@Url.Action("Index", "Home")' class="logo">PelisFlix</a>
       <div class="search">
         <div class="container">
-          <input type="text" name="text" class="input" required="" placeholder="Type to search...">
+          <input type="text" name="text" autofocus class="input" required="" placeholder="Type to search...">
         </div>
       </div>
       <a class="user" href='@Url.Action("Perfil", "Home")'>
@@ -33,7 +29,6 @@
         </div>
       </a>
     </nav>
-    }
     <div class="mobile-menu" id="mobile-menu">
       <div class="close-button" id="close-button">X</div>
       <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
@@ -43,7 +38,7 @@
       <a href="perfil.html"><i class="fas fa-user"></i> Perfil</a>
       <a href="#"><i class="fas fa-cog"></i> Configuración</a>
     </div>
-    
+        }
   </header>
 
     <div class="container">

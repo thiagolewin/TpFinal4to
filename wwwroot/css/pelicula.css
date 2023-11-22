@@ -46,7 +46,7 @@ header {
   }
 
   .search {
-    flex: 1;
+    width: 60%;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -133,14 +133,14 @@ header {
 
 .photo img{
     width: 425px;
-    height: 425px;
+
     border-radius: 5px;
 }
 
 .texto{
     margin-top: 150px;
     flex: 1 1 400px;
-    color: red;
+    color: black;
     
 }
 

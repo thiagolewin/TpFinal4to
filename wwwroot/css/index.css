@@ -45,7 +45,7 @@ body {
   }
   
   .search {
-    flex: 1;
+    width: 60%;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -196,14 +196,13 @@ body {
   .title {
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 10px; 
+    margin-bottom: 30px; 
   }
   
   .icons {
     display: flex;
     align-items: center; 
     margin-top: -2px; 
-    padding-right: 20px;
   }
   
   .review-button {
@@ -254,7 +253,7 @@ body {
     padding: 15px 5px;
     color: white;
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 0;
     border-radius: 10px;
   }
 
