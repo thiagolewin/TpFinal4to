@@ -2,51 +2,68 @@
     ViewData["Title"] = "Perfil";
     ViewBag.MostrarNavbar = true;
 }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <link rel="stylesheet" href="~/css/perfil.css" asp-append-version="true" />
     <span style="display:none;" id="username" class="user">@ViewBag.Usuario.UserName</span>
-    <div class="usuario">
+    <div class="profile">
         <img src="https://static.vecteezy.com/system/resources/previews/019/879/198/original/user-icon-on-transparent-background-free-png.png" alt="">
-        <h1>@ViewBag.Usuario.Nombre  @ViewBag.Usuario.Apellido</h1>
-        <a class="buttonR" href='@Url.Action("Cerrar", "Home")'>CERRAR SESIÓN</a>
+        <h1>@ViewBag.Usuario.Nombre @ViewBag.Usuario.Apellido</h1>
+        <a class="logout-button" href='@Url.Action("Cerrar", "Home")'>CERRAR SESIÓN</a>
     </div>
-    <div class="info">
-        <div class="reseñas">
+
+
+
+
+    <div class="content">
+        <div class="reviews">
             <h1>RESEÑAS</h1>
-            @foreach(var i in ViewBag.Reseñas) {
-            <div class="pelicula">
-                <h1>@i.NombrePelicula</h1>
-                <h2>@i.ReseñaTxt</h2>
-            </div>
+            @foreach(var review in ViewBag.Reseñas) {
+                <div class="movie-review">
+                    <h2>@review.NombrePelicula</h2>
+                    <p>@review.ReseñaTxt</p>
+                </div>
             }
         </div>
-        <div class="datos">
-            <h1>DATOS</h1>
-         <div class="personal">   
+
+
+
+
+        <div class="details">
+            <div class="personal">  
             <div class="datosPart">
             <span style="display:none" class="dato">PaisOrigen</span>
             <h1>Pais de origen</h1>
-                <div id="contenedorperso">
-                    <h2 id="datoPerso">@ViewBag.Usuario.PaisOrigen</h2>
-                </div>
+            <h2>@ViewBag.Usuario.PaisOrigen</h2>
             </div>
             <button class="button">EDITAR</button>
         </div>
-       <div class="personal">   
+
+
+
+
+            <div class="personal">  
             <div class="datosPart">
-            <span style="display:none" class="dato">Idioma</span>
-            <h1>IDIOMA</h1>
-            <h2 id="datoPerso">@ViewBag.Usuario.Idioma</h2>
+            <span style="display:none" class="dato">PaisOrigen</span>
+            <h1>Pais de origen</h1>
+            <h2>@ViewBag.Usuario.PaisOrigen</h2>
             </div>
             <button class="button">EDITAR</button>
         </div>
-       <div class="personal">   
+
+
+
+
+            <div class="personal">  
             <div class="datosPart">
-            <span style="display:none" class="dato">PeliculaFavorita</span>
-            <h1>PELICULA FAVORITA</h1>
-            <h2 id="datoPerso">@ViewBag.Usuario.PeliculaFavorita</h2>
+            <span style="display:none" class="dato">PaisOrigen</span>
+            <h1>Pais de origen</h1>
+            <h2>@ViewBag.Usuario.PaisOrigen</h2>
             </div>
             <button class="button">EDITAR</button>
         </div>
         </div>
     </div>
+
+
     <script src="/js/perfil.js"></script>

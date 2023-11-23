@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="~/css/pelicula.css" asp-append-version="true" />
 
+
 <div class="content">
         <div class="photo-container">
             <div class="photo"><img src=@ViewBag.Card.Portada alt=""></div>
@@ -24,6 +25,7 @@
         </div>
     </div>
 
+
         <div class="resena">
             <div class="titlo">
                 <h1>RESEÑAS</h1>
@@ -34,10 +36,11 @@
               <input type="hidden" name="idPelicula" value=@ViewBag.Card.IdCard>
               <input type="hidden" name="nombreUsuario" value=@ViewBag.Usuario.UserName>
               <input type="hidden" name="nombrePelicula" value= "@ViewBag.Card.Titulo">
-              <button type="submit">Enviar</button>
+              <button type="submit" class="button">Enviar</button>
             </form>
-            
+           
         </div>
+
 
         <div class="cards">
              @foreach(var i in @ViewBag.Reseñas) {
@@ -49,6 +52,3 @@
               </div>
         }
           </div>
-       
-
-

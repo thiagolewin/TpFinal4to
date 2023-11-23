@@ -1,427 +1,433 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f3f3f3;  
-  }
-  
-  header {
-    background-color: #1b1b1b;
-    color: #fff;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-  
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    color: #fff;
-    font-size: 24px;
-    margin-right: 10px;
-  }
-  
-  .logo {
-    font-size: 24px;
-    color: #fff;
-    margin-right: -40px;
-    margin-left: 60px;
-    text-decoration: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    cursor: pointer;
-  }
-  
-  .menu-toggle .bar {
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-  }
-  
-  .search {
-    width: 60%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .search .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333;
-    border-radius: 30px;
-    padding: 7px;
-    width: 70%;
-  }
-  
-  .search .input {
-    border: none;
-    background-color: transparent;
-    color: #fff;
-    padding: 5px;
-    font-size: 16px;
-    outline: none;
-    width: 100%;
-  }
-  
-  .user {
-    display: flex;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;  
+}
+
+header {
+  background-color: #1b1b1b;
+  color: #fff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.logo {
+  font-size: 24px;
+  color: #fff;
+  margin-right: -40px;
+  margin-left: 60px;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+.search {
+  width: 60%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  border-radius: 30px;
+  padding: 7px;
+  width: 70%;
+}
+
+.search .input {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  padding: 5px;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.user img {
+  width: 62px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.LikesDislikes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 47px;
+}
+.LikesDislikes .dislike-icon,   .LikesDislikes .like-icon{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.LikesDislikes .like-icon {
+  margin-left: 5px;
+
+}
+.LikesDislikes .dislike-icon {
+    margin-right: 5px;
     margin-left: 10px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .user img {
-    width: 62px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 20px;
-    cursor: pointer;
-  }
-  .LikesDislikes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 47px;
-  }
-  .LikesDislikes .dislike-icon,   .LikesDislikes .like-icon{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .LikesDislikes .like-icon {
-    margin-left: 5px;
-  
-  }
-  .LikesDislikes .dislike-icon {
-      margin-right: 5px;
-      margin-left: 10px;
-  }
+}
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #1d1d1d;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 12%;
+  height: 100%;
+  padding: 10px;
+  transition: left 0.3s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.close-button {
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+  align-self: flex-end;
+  margin-right: 10px;
+}
+
+.mobile-menu a {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 10px;
+  margin-left: 12px;
+}
+
+main {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin: 20px 0;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  letter-spacing: 1px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 400px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+
+.card:hover {
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.photo {
+  height: 200px;
+  background-color: #eee;
+  overflow: hidden;
+}
+.photo  img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -2px;
+}
+.icons .stars{
+    color: #ffcc00;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+.review-button {
+  text-align: center;
+  margin-top: 15  px;
+}
+
+.LikesDislikes {
+  display: flex;
+  margin-top: 10px  ;
+  justify-content: center;
+}
+.LikesDislikes .dislike-icon,   .LikesDislikes .like-icon{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.LikesDislikes .like-icon {
+  margin-left: 5px;
+}
+.LikesDislikes .dislike-icon {
+    margin-right: 5px;
+    margin-left: 10px;
+}
+.like-icon {
+  display: inline-block;
+  color: #333;
+  transition: color 0.3s;
+  margin-right: 70px;
+}
+
+.like-icon:hover {
+  color: blue;
+}
+
+
+.dislike-icon {
+  display: inline-block;
+  color: #333;
+  transition: color 0.3s;
+  margin-right: 10px;
+}
+
+.dislike-icon:hover{
+  color: red;
+}
+.btnReseñas {
+  background-color: #1b1b1b;
+  padding: 15px 10px;
+  color: white;
+  text-decoration: none;
+  margin: 0 0;
+  border-radius: 10px;
+}
+
+
+
+@media screen and (max-width: 768px) {
   .mobile-menu {
     display: flex;
-    flex-direction: column;
-    background-color: #1d1d1d;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 12%;
-    height: 100%;
-    padding: 10px;
-    transition: left 0.3s ease;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
   }
-  
-  .close-button {
-    cursor: pointer;
-    color: #fff;
-    font-size: 24px;
-    align-self: flex-end;
-    margin-right: 10px;
+}
+
+
+
+footer {
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 40px 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo h2 {
+  font-size: 36px;
+  margin-left: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.footer-links ul li {
+  margin: 10px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #ffcc00;
+}
+
+.footer-social a {
+  font-size: 24px;
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ffcc00;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+}
+
+.footer-bottom a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+/* Alineación de elementos en el footer */
+footer .footer-content {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Ajuste de tamaño del logo */
+.footer-logo h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Estilo de los enlaces del footer */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Permite que los enlaces se envuelvan en pantallas pequeñas */
+  justify-content: center; /* Centra los enlaces horizontalmente */
+}
+
+.footer-links ul li {
+  margin: 10px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #ffcc00;
+}
+
+footer {
+  max-width: 100%; /* Se expandirá hasta el ancho máximo de la ventana */
+  box-sizing: border-box; /* Evita que el borde o margen sumen al ancho máximo */
+}
+
+/* Alineación de elementos en el footer-bottom */
+.footer-bottom {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+/* Ajuste de espaciado en el footer */
+footer .footer-social {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  font-size: 24px;
+  margin: 0 15px;
+}
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
   }
-  
-  .mobile-menu a {
-    color: #fff;
-    text-decoration: none;
-    margin-bottom: 10px;
-    margin-left: 12px;
-  }
-  
-  main {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 36px; 
-    color: #333; 
-    text-align: center; 
+ 
+  .logo {
     margin: 20px 0;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    letter-spacing: 1px; 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  
-  
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .card {
-    width: 400px;
-    border: 1px solid #ccc;
-    margin: 10px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px; 
-    margin-right: 50px;
-    margin-left: 50px;
-  }
-  
-  
-  .card:hover {
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); 
-    transition: 0.3s;
-  }
-  
-  .photo {
-    height: 200px;
-    background-color: #eee;
-    overflow: hidden;
-  }
-  .photo  img {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .card-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-  }
-  
-  .title {
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 30px; 
-  }
-  
-  .icons {
-    display: flex;
-    align-items: center;
-    margin-top: -2px; 
-  }
-  .icons .stars{
-      margin-left: 20px;
-  }
-  .review-button {
-    text-align: center;
-    margin-top: 15  px;
-  }
-  
-  .LikesDislikes {
-    display: flex;
-    margin-top: 10px  ;
-    justify-content: center;
-  }
-  .LikesDislikes .dislike-icon,   .LikesDislikes .like-icon{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .LikesDislikes .like-icon {
-    margin-left: 5px;
-  }
-  .LikesDislikes .dislike-icon {
-      margin-right: 5px;
-      margin-left: 10px;
-  }
-  .like-icon {
-    display: inline-block;
-    color: #333;
-    transition: color 0.3s;
-    margin-right: 70px;
-  }
-  
-  .like-icon:hover {
-    color: blue;
-  }
+}
 
-  .dislike-icon {
-    display: inline-block;
-    color: #333;
-    transition: color 0.3s;
-    margin-right: 10px;
-  }
-  
-  .dislike-icon:hover{
-    color: red;
-  }
-  .btnReseñas {
-    background-color: #1b1b1b;
-    padding: 15px 5px;
-    color: white;
-    text-decoration: none;
-    margin: 0 0;
-    border-radius: 10px;
-  }
-
-  
-  @media screen and (max-width: 768px) {
-    .mobile-menu {
-      display: flex;
-    }
-  }
-  
-  
-  
-  footer {
-    background-color: #1b1b1b;
-    color: #fff;
-    padding: 40px 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .footer-logo h2 {
-    font-size: 36px;
-    margin-left: 10px;
-  }
-  
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-  }
-  
-  .footer-links ul li {
-    margin: 10px;
-  }
-  
-  .footer-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-  }
-  
-  .footer-links ul li a:hover {
-    color: #ffcc00;
-  }
-  
-  .footer-social a {
-    font-size: 24px;
-    margin: 0 15px;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-social a:hover {
-    color: #ffcc00;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    padding: 15px 0;
-  }
-  
-  .footer-bottom p {
-    margin: 0;
-    font-size: 14px;
-    color: #fff;
-  }
-  
-  .footer-bottom a {
-    color: #ffcc00;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-bottom a:hover {
-    color: #fff;
-  }
-  
-  /* Alineación de elementos en el footer */
-  footer .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  /* Ajuste de tamaño del logo */
-  .footer-logo h2 {
-    font-size: 24px;
-    margin: 0;
-  }
-  
-  /* Estilo de los enlaces del footer */
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap; /* Permite que los enlaces se envuelvan en pantallas pequeñas */
-    justify-content: center; /* Centra los enlaces horizontalmente */
-  }
-  
-  .footer-links ul li {
-    margin: 10px;
-  }
-  
-  .footer-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
-  }
-  
-  .footer-links ul li a:hover {
-    color: #ffcc00;
-  }
-  
-  footer {
-    max-width: 100%; /* Se expandirá hasta el ancho máximo de la ventana */
-    box-sizing: border-box; /* Evita que el borde o margen sumen al ancho máximo */
-  }
-  
-  /* Alineación de elementos en el footer-bottom */
-  .footer-bottom {
-    text-align: center;
-    padding: 15px 0;
-  }
-  
-  .footer-bottom p {
-    margin: 0;
-    font-size: 14px;
-  }
-  
-  .footer-bottom a {
-    color: #ffcc00;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-bottom a:hover {
-    color: #fff;
-  }
-  
-  /* Ajuste de espaciado en el footer */
-  footer .footer-social {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .footer-social a {
-    font-size: 24px;
-    margin: 0 15px;
-  }
-  
-  @media screen and (max-width: 700px) {
-    .navbar {
-      flex-direction: row;
-      align-items: center;
-    }
-    
-    .logo {
-      margin: 20px 0;
-    }
-  }

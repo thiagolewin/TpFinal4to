@@ -27,6 +27,21 @@ public class HomeController : Controller
         ViewBag.Cards = BD.MisCards("Select * from Card");
         return View("Filtrado");
     }
+    public IActionResult ReseñasFilt(string cond) {
+        ViewBag.Usuario = UsuarioActivo.DevolverUser();
+        ViewBag.Reseñas = BD.Reseñas(cond);
+        return View("Reseñas");
+    }
+    public IActionResult Reseñas() {
+        ViewBag.Usuario = UsuarioActivo.DevolverUser();
+        ViewBag.Reseñas = BD.Reseñas("Select * from Reseña");
+        return View("Reseñas");
+    }
+    public IActionResult Filtrar(string cond) {
+        ViewBag.Usuario = UsuarioActivo.DevolverUser();
+        ViewBag.Cards = BD.MisCards(cond);
+        return View("Filtrado");
+    }
     public IActionResult ViewRegister() {
         return View("Registro");
     }

@@ -4,23 +4,27 @@
 }
 <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/filtrado.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <div class="filter-box-advanced active">
         <h2>Filtrar</h2>
         <div class="filter-buttons">
-          <button class="filter-button" id="show-all">Mostrar Todos</button>
+          <a class="filter-button" id="show-all" href='@Url.Action("Filtrar", "Home", new {cond = "Select * from Card"})'>Mostrar Todos</a>
           <div class="filter-accordion">
             <input type="checkbox" id="star-filter">
             <label for="star-filter" class="filter-button">Por Estrellas <i class="fas fa-chevron-down"></i></label>
             <div class="filter-content">
-                <a class="filter-button">1 Estrella</a>
-                <button class= "filter-button">2 Estrellas</button>
-                <button class="filter-button">3 Estrellas</button>
-                <button class="filter-button">4 Estrellas</button>
-                <button class="filter-button">5 Estrellas</button>
+                <button class="filter-button" onclick="Estrellas(1)">1 Estrella</button>
+                <button class= "filter-button" onclick="Estrellas(2)">2 Estrellas</button>
+                <button class="filter-button" onclick="Estrellas(3)">3 Estrellas</button>
+                <button class="filter-button" onclick="Estrellas(4)">4 Estrellas</button>
+                <button class="filter-button" onclick="Estrellas(5)">5 Estrellas</button>
             </div>
           </div>
-          <button class="filter-button" id="filter-oldest">Más Dislikes</button>
-          <button class="filter-button" id="filter-likes">Más Likes</button>
+          <a class="filter-button" id="filter-oldest" href='@Url.Action("Filtrar", "Home", new {cond = "WITH RankedCards AS (SELECT *, ROW_NUMBER() OVER (ORDER BY DisLikes DESC) AS RowNum FROM Card) SELECT * FROM RankedCards WHERE RowNum <= 40"})'>Más Dislikes</a>
+          <a class="filter-button" id="filter-likes" href='@Url.Action("Filtrar", "Home", new {cond = "WITH RankedCards AS (SELECT *, ROW_NUMBER() OVER (ORDER BY Likes DESC) AS RowNum FROM Card) SELECT * FROM RankedCards WHERE RowNum <= 40"})'>Más Likes</a>
+
+
+
         </div>
       </div>
     <h1>Favoritas</h1>
@@ -44,12 +48,13 @@
                     }
                     </div>
 
+
                 </div>
             </div>
         </div>
-        
+       
     }
-    
+   
 </div>
 @functions {
     // Método para calcular la puntuación de estrellas
@@ -57,14 +62,20 @@
     {
          int totalVotes = likes + dislikes;
 
+
         if (totalVotes == 0)
         {
             return 0; // No votes, no stars
         }
 
+
         double percentageLikes = (double)likes / totalVotes;
         double stars = percentageLikes * 5;
+
 
         return stars;
     }
 }
+    <script src="/js/filtrado.js"></script>
+
+

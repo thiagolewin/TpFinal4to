@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Perfil";
+    ViewBag.MostrarNavbar = true;
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="~/css/reseñas.css" asp-append-version="true" />
+    <div class="filter-box-advanced active">
+        <h2>Filtrar</h2>
+        <div class="filter-buttons">
+          <a class="filter-button" id="show-all" href='@Url.Action("ReseñasFilt", "Home", new {cond = "Select * from Reseña"})'>Mostrar Todos</a>
+          <a class="filter-button" id="filter-oldest" href='@Url.Action("ReseñasFilt", "Home", new {cond = "SELECT * FROM Reseña ORDER BY IdReseña ASC"})'>Mas Viejas</a>
+          <a class="filter-button" id="filter-likes" href='@Url.Action("ReseñasFilt", "Home", new {cond = "SELECT * FROM Reseña ORDER BY IdReseña DESC"})'>Más Nuevas</a>
+
+
+
+        </div>
+      </div>
+    <h1 class="titulo">RESEÑAS</h1>
+   
+    <div class="contenedor-tarjetas">
+    @foreach(var i in @ViewBag.Reseñas) {
+        <div class="tarjeta">
+            <h1>@i.NombrePelicula</h1>
+            <h3>@i.NombreUsuario</h3>
+            <p>@i.ReseñaTxt</p>
+        </div>
+    }
+
+    </div>

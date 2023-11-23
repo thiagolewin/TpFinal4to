@@ -3,24 +3,33 @@
     const cards = document.querySelectorAll('.card');
 
 
+
+
     const startsWith = (string, term) => string.trim().toLowerCase().indexOf(term.trim().toLowerCase()) === 0;
+
 
     searchInput.addEventListener("click",()=> {
         const currentUrl = window.location.pathname;
         const desiredUrl = '/Home/Index';
         if (currentUrl !== desiredUrl) {
             window.location.href = desiredUrl
-        } 
+        }
     })
     searchInput.addEventListener('input', function () {
         const searchTerm = searchInput.value.toLowerCase().trim();
+
+
 
 
         cards.forEach(card => {
             const title = card.querySelector('.title').innerText.toLowerCase();
 
 
+
+
             const matches = startsWith(title, searchTerm);
+
+
 
 
             card.style.display = matches ? 'block' : 'none';
@@ -28,12 +37,13 @@
     });
 });
 
-const menuToggle = document.getElementById('menu-toggle');
+
+const touchElement = document.querySelector('.touch');
 const mobileMenu = document.getElementById('mobile-menu');
 const closeButton = document.getElementById('close-button');
 
 
-menuToggle.addEventListener('click', () => {
+touchElement.addEventListener('click', (event) => {
     mobileMenu.style.left = "0";
 });
 
@@ -43,14 +53,15 @@ closeButton.addEventListener('click', () => {
 });
 
 
-document.addEventListener('click', (event) => {
-    if (event.target !== menuToggle && event.target !== mobileMenu && event.target !== closeButton) {
-        mobileMenu.style.left = "-100%";
-    }
-});
+
+
+
+
 
 
 const stars = document.querySelectorAll('.star');
+
+
 
 
 stars.forEach(star => {
@@ -62,8 +73,4 @@ stars.forEach(star => {
         star.classList.remove('active');
     });
 });
-
-
-
-
 
