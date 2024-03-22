@@ -29,23 +29,30 @@
           <input type="text" name="text" autofocus class="input" required="" placeholder="Type to search...">
         </div>
       </div>
+      @if (@ViewBag.Usuario.UserName != "") {
       <a class="user" href='@Url.Action("Perfil", "Home")'>
         <span style="color:white; textDecoration:none;">@ViewBag.Usuario.UserName</span>
-
-
         <div href="perfil.html">
             <img
           src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png"
           alt="User Icon">
         </div>
       </a>
+      } else {
+        <a class="iniciarSesion" href='@Url.Action("ViewLogin", "Home")'>Iniciar Sesion</a>
+      }
+
     </nav>
     <div class="mobile-menu" id="mobile-menu">
       <div class="close-button" id="close-button">X</div>
       <a href='@Url.Action("Index", "Home")'><i class="fas fa-home"></i> Inicio</a>
       <a href='@Url.Action("Filtrado", "Home")'><i class="fas fa-film"></i> Filtado</a>
       <a href='@Url.Action("Reseñas", "Home")'><i class="fas fa-newspaper"></i> Publicaciones</a>
-      <a href='@Url.Action("Perfil", "Home")'><i class="fas fa-user"></i> Perfil</a>
+            @if (@ViewBag.Usuario.UserName != "") {
+              <a href='@Url.Action("Perfil", "Home")'><i class="fas fa-user"></i> Perfil</a>
+            } else {
+                   <a class="iniciarSesionMenu" href='@Url.Action("ViewLogin", "Home")'><i class="fas fa-user"></i> Iniciar Sesion</a>
+            }
     </div>
         }
   </header>

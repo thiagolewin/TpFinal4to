@@ -30,6 +30,7 @@
             <div class="titlo">
                 <h1>RESEÑAS</h1>
             </div>
+            @if (@ViewBag.Usuario.UserName != "") {
             <form method="post" action='@Url.Action("EnviarReseña","Home")' id="formReseñas" style="display: flex; flexDirection: column;">
               <input type="text" placeholder="Escribir Reseñas" name="texto">
               <input type="hidden" name="idUsuario" value=@ViewBag.Usuario.IdUsuario>
@@ -38,7 +39,7 @@
               <input type="hidden" name="nombrePelicula" value= "@ViewBag.Card.Titulo">
               <button type="submit" class="button">Enviar</button>
             </form>
-           
+            }
         </div>
 
 

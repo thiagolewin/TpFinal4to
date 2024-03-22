@@ -15,9 +15,6 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        if(UsuarioActivo.DevolverUser().IdUsuario == 0) {
-            return View("Login");
-        }
         ViewBag.Usuario = UsuarioActivo.DevolverUser();
         ViewBag.Cards = BD.MisCards("Select * from Card");
         return View();
@@ -74,14 +71,14 @@ public class HomeController : Controller
         return RedirectToAction("Pelicula", new { pelicula = idPelicula });
     }
     public IActionResult Cerrar() {
-        UsuarioActivo.AgregarUser(0,"","","","","","","");
-        return View("Login");
+        UsuarioActivo.AgregarUser(0,"","","","","","","",false);
+        return RedirectToAction("Index", new {});
     }
     public User EditarInfo(string username, string campo, string data)
     {
          BD.ActualizarInfo(username,campo,data);
          User userActivo = BD.ExisteUser(username);
-         UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita,userActivo.Idioma);
+         UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita,userActivo.Idioma,userActivo.admin);
         ViewBag.Usuario = UsuarioActivo.DevolverUser();
         return UsuarioActivo.DevolverUser();
     }    
@@ -91,7 +88,7 @@ public class HomeController : Controller
        
         //if(userActivo != null || userActivo.PeliculaFav == null ) {
         if (userActivo != null){
-            UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita,userActivo.Idioma);
+                     UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita,userActivo.Idioma,userActivo.admin);
             ViewBag.Usuario = UsuarioActivo.DevolverUser();
             ViewBag.Cards = BD.MisCards("Select * from Card");
             return View("Index");
@@ -105,7 +102,7 @@ public class HomeController : Controller
         if (BD.ExisteUser(UserName) == null) {
             BD.AgregarUser(Nombre,Apellido,UserName,Contraseña,Mail,Telefono);
             User userActivo = BD.Login(UserName, Contraseña);
-            UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita,userActivo.Idioma);
+                    UsuarioActivo.AgregarUser(userActivo.IdUsuario,userActivo.UserName,userActivo.Nombre,userActivo.Apellido,userActivo.Contrasena,userActivo.PaisOrigen,userActivo.PeliculaFavorita,userActivo.Idioma,userActivo.admin);
              ViewBag.Usuario = UsuarioActivo.DevolverUser();
             ViewBag.Cards = BD.MisCards("Select * from Card");
             return View("Index");
@@ -120,7 +117,9 @@ public class HomeController : Controller
     {
         return View();
     }
-
+    public IActionResult Agregar() {
+        return View("Index");
+    }
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

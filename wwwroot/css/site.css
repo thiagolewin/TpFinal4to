@@ -1,0 +1,10 @@
+.iniciarSesion {
+    padding: 10px 10px;
+    background-color: rgb(250, 248, 248);
+    color: black !important;
+    text-decoration: none;
+}
+.iniciarSesionMenu {
+    color: white;
+    text-decoration: none;
+}

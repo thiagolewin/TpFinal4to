@@ -66,7 +66,7 @@ public static class BD {
         return MiUser;
     }
      public static void AgregarUser(string Nombre, string Apellido, string UserName, string Contraseña, string Mail, string Telefono) {
-        string sql = "INSERT INTO Usuario(Nombre,Apellido,Contrasena,PaisOrigen,PeliculaFavorita,UserName,Idioma) VALUES (@pNombre,@pApellido,@pContrasena,'','',@pUserName,'')";
+        string sql = "INSERT INTO Usuario(Nombre,Apellido,Contrasena,PaisOrigen,PeliculaFavorita,UserName,Idioma,admin) VALUES (@pNombre,@pApellido,@pContrasena,'','',@pUserName,'',0)";
         using(SqlConnection db = new SqlConnection(_connectionString)) {
             db.Execute(sql, new {pNombre = Nombre, pApellido = Apellido, pContrasena = Contraseña,pUserName = UserName});
         }

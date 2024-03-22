@@ -7,6 +7,11 @@
 
 <title>Inicio</title>
 <h1>Explora el Mundo del Cine</h1>
+    @if(@ViewBag.Usuario.UserName != "") {
+        @if(@ViewBag.Usuario.admin == true) {
+        <a class="agregar" href='@Url.Action("Agregar", "Home")'>Agregar Pelicula</a>
+        }
+    }
 <div class="content">
     @foreach(var i in @ViewBag.Cards){
         <div class="card">
