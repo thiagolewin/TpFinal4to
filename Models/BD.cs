@@ -71,5 +71,11 @@ public static class BD {
             db.Execute(sql, new {pNombre = Nombre, pApellido = Apellido, pContrasena = Contraseña,pUserName = UserName});
         }
     }
+       public static void AgregarPelicula(string Portada,string Titulo,int Likes, int Dislikes, string Descripcion) {
+        string sql = "INSERT INTO Card(Portada,Titulo,Likes,Dislikes,Descripcion) VALUES (@pPortada,@pTitulo,@pLikes,@pDislikes,@pDescripcion)";
+        using(SqlConnection db = new SqlConnection(_connectionString)) {
+            db.Execute(sql, new {pPortada = Portada, pTitulo = Titulo, pLikes = Likes, pDislikes = Dislikes, pDescripcion = Descripcion});
+        }
+    }
    
 }

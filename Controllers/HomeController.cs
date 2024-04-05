@@ -118,7 +118,12 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult Agregar() {
-        return View("Index");
+        ViewBag.Usuario = UsuarioActivo.DevolverUser();
+        return View("Agregar");
+    }
+    public IActionResult AgregarPelicula(string Portada, string Titulo, int Likes, int Dislikes, string Descripcion) {
+        BD.AgregarPelicula(Portada,Titulo,Likes,Dislikes,Descripcion);
+        return RedirectToAction("Index", new {});
     }
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Agregar";
+    ViewBag.MostrarNavbar = true;
+}
+<link rel="stylesheet" href="~/css/agregar.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <main>
+            <form action='@Url.Action("AgregarPelicula","Home")' method="post" id="AgregarPeli" >
+            <label for="Portada">Imagen</label>
+            <input type="text" id="Portada" name="Portada" placeholder="Introduce la url" required>
+            <label for="Titulo">Titulo</label>
+            <input type="text" name="Titulo" id="Titulo" placeholder="Introduce El Titulo" required>
+            <label for="Titulo">Likes</label>
+            <input type="number" name="Likes" id="Likes" placeholder="Introduce la cantidad de Likes" required>
+            <label for="Titulo">DisLikes</label>
+            <input type="number" name="Dislikes" id="Dislikes" placeholder="Introduce la cantidad de Dislikes" required>
+            <label for="Titulo">Descripcion</label>
+            <input type="text" name="Descripcion" id="Descripcion" placeholder="Introduce la Descripcion" required>
+            <button type="submit">Agregar Peli</button>
+        </form>
+        </main>
+
